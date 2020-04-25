@@ -47,164 +47,23 @@
                 "relatedObservation"
             ]
         },
-        "OMObservationPropertyType":{
-            "type":"object",
-            "title":"OMObservationPropertyType",
-            "required":[
-                "omObservation"
-            ],
-            "properties":{
-                "omObservation":{
-                    "title":"omObservation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/OMObservationType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"OM_Observation",
-                        "namespaceURI":"http://www.opengis.net/om/2.0"
-                    }
+        "OtherAbstractTimeObjectType":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/AbstractTimeObjectType"
                 },
-                "nilReason":{
-                    "title":"nilReason",
-                    "allOf":[
-                        {
-                            "type":"array",
-                            "items":{
-                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                            }
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"nilReason",
-                        "namespaceURI":""
-                    }
-                },
-                "remoteSchema":{
-                    "title":"remoteSchema",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"remoteSchema",
-                        "namespaceURI":"http://www.opengis.net/gml/3.2"
-                    }
-                },
-                "type":{
-                    "title":"type",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/TypeType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"type",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "href":{
-                    "title":"href",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"href",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "role":{
-                    "title":"role",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"role",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "arcrole":{
-                    "title":"arcrole",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"arcrole",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "title":{
-                    "title":"title",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"title",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "show":{
-                    "title":"show",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ShowType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"show",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
-                    }
-                },
-                "actuate":{
-                    "title":"actuate",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ActuateType"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"actuate",
-                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                {
+                    "type":"object",
+                    "title":"OtherAbstractTimeObjectType",
+                    "properties":{
                     }
                 }
-            },
+            ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OM_ObservationPropertyType",
+                "localPart":"OtherAbstractTimeObjectType",
                 "namespaceURI":"http://www.opengis.net/om/2.0"
-            },
-            "propertiesOrder":[
-                "omObservation",
-                "nilReason",
-                "remoteSchema",
-                "type",
-                "href",
-                "role",
-                "arcrole",
-                "title",
-                "show",
-                "actuate"
-            ]
+            }
         },
         "TimeObjectPropertyType":{
             "type":"object",
@@ -377,23 +236,23 @@
                 "actuate"
             ]
         },
-        "NamedValuePropertyType":{
+        "OMObservationPropertyType":{
             "type":"object",
-            "title":"NamedValuePropertyType",
+            "title":"OMObservationPropertyType",
             "required":[
-                "namedValue"
+                "omObservation"
             ],
             "properties":{
-                "namedValue":{
-                    "title":"namedValue",
+                "omObservation":{
+                    "title":"omObservation",
                     "allOf":[
                         {
-                            "$ref":"#/definitions/NamedValueType"
+                            "$ref":"#/definitions/OMObservationType"
                         }
                     ],
                     "propertyType":"element",
                     "elementName":{
-                        "localPart":"NamedValue",
+                        "localPart":"OM_Observation",
                         "namespaceURI":"http://www.opengis.net/om/2.0"
                     }
                 },
@@ -520,11 +379,11 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"NamedValuePropertyType",
+                "localPart":"OM_ObservationPropertyType",
                 "namespaceURI":"http://www.opengis.net/om/2.0"
             },
             "propertiesOrder":[
-                "namedValue",
+                "omObservation",
                 "nilReason",
                 "remoteSchema",
                 "type",
@@ -744,6 +603,36 @@
                 "result"
             ]
         },
+        "ObservationContextPropertyType":{
+            "type":"object",
+            "title":"ObservationContextPropertyType",
+            "required":[
+                "observationContext"
+            ],
+            "properties":{
+                "observationContext":{
+                    "title":"observationContext",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ObservationContextType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"ObservationContext",
+                        "namespaceURI":"http://www.opengis.net/om/2.0"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ObservationContextPropertyType",
+                "namespaceURI":"http://www.opengis.net/om/2.0"
+            },
+            "propertiesOrder":[
+                "observationContext"
+            ]
+        },
         "OMProcessPropertyType":{
             "type":"object",
             "title":"OMProcessPropertyType",
@@ -913,36 +802,6 @@
                 "actuate"
             ]
         },
-        "ObservationContextPropertyType":{
-            "type":"object",
-            "title":"ObservationContextPropertyType",
-            "required":[
-                "observationContext"
-            ],
-            "properties":{
-                "observationContext":{
-                    "title":"observationContext",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/ObservationContextType"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"ObservationContext",
-                        "namespaceURI":"http://www.opengis.net/om/2.0"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ObservationContextPropertyType",
-                "namespaceURI":"http://www.opengis.net/om/2.0"
-            },
-            "propertiesOrder":[
-                "observationContext"
-            ]
-        },
         "NamedValueType":{
             "type":"object",
             "title":"NamedValueType",
@@ -988,23 +847,164 @@
                 "value"
             ]
         },
-        "OtherAbstractTimeObjectType":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/AbstractTimeObjectType"
+        "NamedValuePropertyType":{
+            "type":"object",
+            "title":"NamedValuePropertyType",
+            "required":[
+                "namedValue"
+            ],
+            "properties":{
+                "namedValue":{
+                    "title":"namedValue",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/NamedValueType"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"NamedValue",
+                        "namespaceURI":"http://www.opengis.net/om/2.0"
+                    }
                 },
-                {
-                    "type":"object",
-                    "title":"OtherAbstractTimeObjectType",
-                    "properties":{
+                "nilReason":{
+                    "title":"nilReason",
+                    "allOf":[
+                        {
+                            "type":"array",
+                            "items":{
+                                "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                            }
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"nilReason",
+                        "namespaceURI":""
+                    }
+                },
+                "remoteSchema":{
+                    "title":"remoteSchema",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"remoteSchema",
+                        "namespaceURI":"http://www.opengis.net/gml/3.2"
+                    }
+                },
+                "type":{
+                    "title":"type",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/TypeType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"type",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "href":{
+                    "title":"href",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"href",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "role":{
+                    "title":"role",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"role",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "arcrole":{
+                    "title":"arcrole",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"arcrole",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "title":{
+                    "title":"title",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"title",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "show":{
+                    "title":"show",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ShowType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"show",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
+                    }
+                },
+                "actuate":{
+                    "title":"actuate",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/ActuateType"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"actuate",
+                        "namespaceURI":"http://www.w3.org/1999/xlink"
                     }
                 }
-            ],
+            },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"OtherAbstractTimeObjectType",
+                "localPart":"NamedValuePropertyType",
                 "namespaceURI":"http://www.opengis.net/om/2.0"
-            }
+            },
+            "propertiesOrder":[
+                "namedValue",
+                "nilReason",
+                "remoteSchema",
+                "type",
+                "href",
+                "role",
+                "arcrole",
+                "title",
+                "show",
+                "actuate"
+            ]
         }
     },
     "anyOf":[
@@ -1021,7 +1021,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "ObservationContext"
+                                        "result"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1034,11 +1034,45 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/ObservationContextType"
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
                 }
             },
             "elementName":{
-                "localPart":"ObservationContext",
+                "localPart":"result",
+                "namespaceURI":"http://www.opengis.net/om/2.0"
+            }
+        },
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "NamedValue"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/om/2.0"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/NamedValueType"
+                }
+            },
+            "elementName":{
+                "localPart":"NamedValue",
                 "namespaceURI":"http://www.opengis.net/om/2.0"
             }
         },
@@ -1123,7 +1157,7 @@
                             "properties":{
                                 "localPart":{
                                     "enum":[
-                                        "NamedValue"
+                                        "ObservationContext"
                                     ]
                                 },
                                 "namespaceURI":{
@@ -1136,45 +1170,11 @@
                     ]
                 },
                 "value":{
-                    "$ref":"#/definitions/NamedValueType"
+                    "$ref":"#/definitions/ObservationContextType"
                 }
             },
             "elementName":{
-                "localPart":"NamedValue",
-                "namespaceURI":"http://www.opengis.net/om/2.0"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "result"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/om/2.0"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyType"
-                }
-            },
-            "elementName":{
-                "localPart":"result",
+                "localPart":"ObservationContext",
                 "namespaceURI":"http://www.opengis.net/om/2.0"
             }
         }

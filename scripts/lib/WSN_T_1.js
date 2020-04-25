@@ -3,6 +3,21 @@ var WSN_T_1_Module_Factory = function () {
     n: 'WSN_T_1',
     dens: 'http:\/\/docs.oasis-open.org\/wsn\/t-1',
     tis: [{
+        ln: 'TopicNamespaceType.Topic',
+        tn: null,
+        bti: '.TopicType',
+        ps: [{
+            n: 'otherAttributes',
+            t: 'aa'
+          }, {
+            n: 'parent',
+            ti: 'Token',
+            an: {
+              lp: 'parent'
+            },
+            t: 'a'
+          }]
+      }, {
         ln: 'TopicNamespaceType',
         bti: '.ExtensibleDocumented',
         ps: [{
@@ -56,13 +71,6 @@ var WSN_T_1_Module_Factory = function () {
             t: 'ae'
           }]
       }, {
-        ln: 'Documentation',
-        ps: [{
-            n: 'content',
-            col: true,
-            t: 'ae'
-          }]
-      }, {
         ln: 'ExtensibleDocumented',
         ps: [{
             n: 'otherAttributes',
@@ -72,19 +80,11 @@ var WSN_T_1_Module_Factory = function () {
             ti: '.Documentation'
           }]
       }, {
-        ln: 'TopicNamespaceType.Topic',
-        tn: null,
-        bti: '.TopicType',
+        ln: 'Documentation',
         ps: [{
-            n: 'otherAttributes',
-            t: 'aa'
-          }, {
-            n: 'parent',
-            ti: 'Token',
-            an: {
-              lp: 'parent'
-            },
-            t: 'a'
+            n: 'content',
+            col: true,
+            t: 'ae'
           }]
       }, {
         ln: 'QueryExpressionType',

@@ -2,6 +2,49 @@
 {
     "id":"http://docs.oasis-open.org/wsn/t-1#",
     "definitions":{
+        "TopicNamespaceType.Topic":{
+            "allOf":[
+                {
+                    "$ref":"#/definitions/TopicType"
+                },
+                {
+                    "type":"object",
+                    "title":"TopicNamespaceType.Topic",
+                    "properties":{
+                        "otherAttributes":{
+                            "title":"otherAttributes",
+                            "allOf":[
+                                {
+                                    "type":"object",
+                                    "additionalProperties":{
+                                        "type":"string"
+                                    }
+                                }
+                            ],
+                            "propertyType":"anyAttribute"
+                        },
+                        "parent":{
+                            "title":"parent",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
+                                }
+                            ],
+                            "propertyType":"attribute",
+                            "attributeName":{
+                                "localPart":"parent",
+                                "namespaceURI":""
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "propertiesOrder":[
+                "otherAttributes",
+                "parent"
+            ]
+        },
         "TopicNamespaceType":{
             "required":[
                 "targetNamespace"
@@ -187,6 +230,46 @@
                 "any"
             ]
         },
+        "ExtensibleDocumented":{
+            "type":"object",
+            "title":"ExtensibleDocumented",
+            "properties":{
+                "otherAttributes":{
+                    "title":"otherAttributes",
+                    "allOf":[
+                        {
+                            "type":"object",
+                            "additionalProperties":{
+                                "type":"string"
+                            }
+                        }
+                    ],
+                    "propertyType":"anyAttribute"
+                },
+                "documentation":{
+                    "title":"documentation",
+                    "allOf":[
+                        {
+                            "$ref":"#/definitions/Documentation"
+                        }
+                    ],
+                    "propertyType":"element",
+                    "elementName":{
+                        "localPart":"documentation",
+                        "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"ExtensibleDocumented",
+                "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
+            },
+            "propertiesOrder":[
+                "otherAttributes",
+                "documentation"
+            ]
+        },
         "Documentation":{
             "type":"object",
             "title":"Documentation",
@@ -228,89 +311,6 @@
             },
             "propertiesOrder":[
                 "content"
-            ]
-        },
-        "ExtensibleDocumented":{
-            "type":"object",
-            "title":"ExtensibleDocumented",
-            "properties":{
-                "otherAttributes":{
-                    "title":"otherAttributes",
-                    "allOf":[
-                        {
-                            "type":"object",
-                            "additionalProperties":{
-                                "type":"string"
-                            }
-                        }
-                    ],
-                    "propertyType":"anyAttribute"
-                },
-                "documentation":{
-                    "title":"documentation",
-                    "allOf":[
-                        {
-                            "$ref":"#/definitions/Documentation"
-                        }
-                    ],
-                    "propertyType":"element",
-                    "elementName":{
-                        "localPart":"documentation",
-                        "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"ExtensibleDocumented",
-                "namespaceURI":"http://docs.oasis-open.org/wsn/t-1"
-            },
-            "propertiesOrder":[
-                "otherAttributes",
-                "documentation"
-            ]
-        },
-        "TopicNamespaceType.Topic":{
-            "allOf":[
-                {
-                    "$ref":"#/definitions/TopicType"
-                },
-                {
-                    "type":"object",
-                    "title":"TopicNamespaceType.Topic",
-                    "properties":{
-                        "otherAttributes":{
-                            "title":"otherAttributes",
-                            "allOf":[
-                                {
-                                    "type":"object",
-                                    "additionalProperties":{
-                                        "type":"string"
-                                    }
-                                }
-                            ],
-                            "propertyType":"anyAttribute"
-                        },
-                        "parent":{
-                            "title":"parent",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/token"
-                                }
-                            ],
-                            "propertyType":"attribute",
-                            "attributeName":{
-                                "localPart":"parent",
-                                "namespaceURI":""
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "propertiesOrder":[
-                "otherAttributes",
-                "parent"
             ]
         },
         "QueryExpressionType":{

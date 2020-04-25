@@ -3,8 +3,51 @@ var OMEO_SSP_2_0_Module_Factory = function () {
     n: 'OMEO_SSP_2_0',
     dens: 'http:\/\/www.opengis.net\/ssp\/2.0',
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
-    deps: ['XLink_1_0', 'GML_3_2', 'OMEO_EOP_2_0'],
+    deps: ['XLink_1_0', 'OMEO_EOP_2_0', 'GML_3_2'],
     tis: [{
+        ln: 'EarthObservationType',
+        bti: 'OMEO_EOP_2_0.EarthObservationType'
+      }, {
+        ln: 'EarthObservationMetadataType',
+        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
+        ps: [{
+            n: 'derivedFrom',
+            mno: 0,
+            col: true
+          }, {
+            n: 'nominalDate'
+          }]
+      }, {
+        ln: 'EarthObservationEquipmentType',
+        bti: 'OMEO_EOP_2_0.EarthObservationEquipmentType',
+        ps: [{
+            n: 'rest',
+            mno: 0,
+            col: true,
+            mx: false,
+            dom: false,
+            etis: [{
+                en: 'platform',
+                ti: 'OMEO_EOP_2_0.PlatformPropertyType'
+              }, {
+                en: 'instrument',
+                ti: 'OMEO_EOP_2_0.InstrumentPropertyType'
+              }],
+            t: 'ers'
+          }]
+      }, {
+        ln: 'FootprintType',
+        bti: 'OMEO_EOP_2_0.FootprintType',
+        ps: [{
+            n: 'locationName',
+            rq: true,
+            en: {
+              lp: 'locationName',
+              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
+            },
+            ti: 'GML_3_2.CodeType'
+          }]
+      }, {
         ln: 'EarthObservationEquipmentPropertyType',
         ps: [{
             n: 'earthObservationEquipment',
@@ -60,15 +103,19 @@ var OMEO_SSP_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EarthObservationType',
-        bti: 'OMEO_EOP_2_0.EarthObservationType'
-      }, {
-        ln: 'FootprintPropertyType',
+        ln: 'EarthObservationResultPropertyType',
         ps: [{
-            n: 'footprint',
+            n: 'earthObservationResult',
             rq: true,
-            en: 'Footprint',
-            ti: '.FootprintType'
+            en: 'EarthObservationResult',
+            ti: '.EarthObservationResultType'
+          }, {
+            n: 'owns',
+            ti: 'Boolean',
+            an: {
+              lp: 'owns'
+            },
+            t: 'a'
           }, {
             n: 'nilReason',
             ti: {
@@ -109,13 +156,26 @@ var OMEO_SSP_2_0_Module_Factory = function () {
             n: 'actuate',
             ti: 'XLink_1_0.ActuateType',
             t: 'a'
+          }]
+      }, {
+        ln: 'EarthObservationResultType',
+        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
+        ps: [{
+            n: 'cloudCoverPercentage',
+            ti: 'GML_3_2.MeasureType'
           }, {
-            n: 'owns',
-            ti: 'Boolean',
-            an: {
-              lp: 'owns'
-            },
-            t: 'a'
+            n: 'cloudCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2.MeasureType'
+          }, {
+            n: 'cloudCoverPercentageQuotationMode'
+          }, {
+            n: 'snowCoverPercentage',
+            ti: 'GML_3_2.MeasureType'
+          }, {
+            n: 'snowCoverPercentageAssessmentConfidence',
+            ti: 'GML_3_2.MeasureType'
+          }, {
+            n: 'snowCoverPercentageQuotationMode'
           }]
       }, {
         ln: 'EarthObservationMetadataPropertyType',
@@ -188,24 +248,12 @@ var OMEO_SSP_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'FootprintType',
-        bti: 'OMEO_EOP_2_0.FootprintType',
+        ln: 'FootprintPropertyType',
         ps: [{
-            n: 'locationName',
+            n: 'footprint',
             rq: true,
-            en: {
-              lp: 'locationName',
-              ns: 'http:\/\/www.opengis.net\/gml\/3.2'
-            },
-            ti: 'GML_3_2.CodeType'
-          }]
-      }, {
-        ln: 'EarthObservationResultPropertyType',
-        ps: [{
-            n: 'earthObservationResult',
-            rq: true,
-            en: 'EarthObservationResult',
-            ti: '.EarthObservationResultType'
+            en: 'Footprint',
+            ti: '.FootprintType'
           }, {
             n: 'nilReason',
             ti: {
@@ -255,59 +303,39 @@ var OMEO_SSP_2_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'EarthObservationResultType',
-        bti: 'OMEO_EOP_2_0.EarthObservationResultType',
-        ps: [{
-            n: 'cloudCoverPercentage',
-            ti: 'GML_3_2.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2.MeasureType'
-          }, {
-            n: 'cloudCoverPercentageQuotationMode'
-          }, {
-            n: 'snowCoverPercentage',
-            ti: 'GML_3_2.MeasureType'
-          }, {
-            n: 'snowCoverPercentageAssessmentConfidence',
-            ti: 'GML_3_2.MeasureType'
-          }, {
-            n: 'snowCoverPercentageQuotationMode'
-          }]
-      }, {
-        ln: 'EarthObservationMetadataType',
-        bti: 'OMEO_EOP_2_0.EarthObservationMetaDataType',
-        ps: [{
-            n: 'derivedFrom',
-            mno: 0,
-            col: true
-          }, {
-            n: 'nominalDate'
-          }]
-      }, {
-        ln: 'EarthObservationEquipmentType',
-        bti: 'OMEO_EOP_2_0.EarthObservationEquipmentType',
-        ps: [{
-            n: 'rest',
-            mno: 0,
-            col: true,
-            mx: false,
-            dom: false,
-            etis: [{
-                en: 'instrument',
-                ti: 'OMEO_EOP_2_0.InstrumentPropertyType'
-              }, {
-                en: 'platform',
-                ti: 'OMEO_EOP_2_0.PlatformPropertyType'
-              }],
-            t: 'ers'
-          }]
-      }, {
         t: 'enum',
         ln: 'PercentageCoverQuotationModeValueEnumerationType',
         vs: ['AUTOMATIC', 'MANUAL']
       }],
     eis: [{
+        en: 'EarthObservation',
+        ti: '.EarthObservationType',
+        sh: {
+          lp: 'EarthObservation',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'Footprint',
+        ti: '.FootprintType',
+        sh: {
+          lp: 'Footprint',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservationMetadata',
+        ti: '.EarthObservationMetadataType',
+        sh: {
+          lp: 'EarthObservationMetaData',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
+        en: 'EarthObservationEquipment',
+        ti: '.EarthObservationEquipmentType',
+        sh: {
+          lp: 'EarthObservationEquipment',
+          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
+        }
+      }, {
         en: 'instrument',
         ti: 'OMEO_EOP_2_0.InstrumentPropertyType',
         sc: '.EarthObservationEquipmentType'
@@ -322,34 +350,6 @@ var OMEO_SSP_2_0_Module_Factory = function () {
         en: 'platform',
         ti: 'OMEO_EOP_2_0.PlatformPropertyType',
         sc: '.EarthObservationEquipmentType'
-      }, {
-        en: 'Footprint',
-        ti: '.FootprintType',
-        sh: {
-          lp: 'Footprint',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'EarthObservation',
-        ti: '.EarthObservationType',
-        sh: {
-          lp: 'EarthObservation',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'EarthObservationEquipment',
-        ti: '.EarthObservationEquipmentType',
-        sh: {
-          lp: 'EarthObservationEquipment',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
-      }, {
-        en: 'EarthObservationMetadata',
-        ti: '.EarthObservationMetadataType',
-        sh: {
-          lp: 'EarthObservationMetaData',
-          ns: 'http:\/\/www.opengis.net\/eop\/2.0'
-        }
       }]
   };
   return {

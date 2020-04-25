@@ -5,42 +5,13 @@ var OM_1_0_0_Module_Factory = function () {
     dans: 'http:\/\/www.w3.org\/1999\/xlink',
     deps: ['XLink_1_0', 'GML_3_1_1', 'SWE_1_0_1', 'SensorML_1_0_1'],
     tis: [{
-        ln: 'ObservationType',
+        ln: 'ObservationCollectionType',
         bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'metadata',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'samplingTime',
+            n: 'member',
             rq: true,
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'resultTime',
-            ti: 'SWE_1_0_1.TimeObjectPropertyType'
-          }, {
-            n: 'procedure',
-            rq: true,
-            ti: '.ProcessPropertyType'
-          }, {
-            n: 'resultQuality',
-            ti: '.AnyOrReferenceType'
-          }, {
-            n: 'observedProperty',
-            rq: true,
-            ti: 'SWE_1_0_1.PhenomenonPropertyType'
-          }, {
-            n: 'featureOfInterest',
-            rq: true,
-            ti: 'GML_3_1_1.FeaturePropertyType'
-          }, {
-            n: 'parameter',
-            mno: 0,
             col: true,
-            ti: 'SWE_1_0_1.AnyDataPropertyType'
-          }, {
-            n: 'result',
-            rq: true,
-            ti: 'AnyType'
+            ti: '.ObservationPropertyType'
           }]
       }, {
         ln: 'AnyOrReferenceType',
@@ -133,13 +104,42 @@ var OM_1_0_0_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'ObservationCollectionType',
+        ln: 'ObservationType',
         bti: 'GML_3_1_1.AbstractFeatureType',
         ps: [{
-            n: 'member',
+            n: 'metadata',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'samplingTime',
             rq: true,
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'resultTime',
+            ti: 'SWE_1_0_1.TimeObjectPropertyType'
+          }, {
+            n: 'procedure',
+            rq: true,
+            ti: '.ProcessPropertyType'
+          }, {
+            n: 'resultQuality',
+            ti: '.AnyOrReferenceType'
+          }, {
+            n: 'observedProperty',
+            rq: true,
+            ti: 'SWE_1_0_1.PhenomenonPropertyType'
+          }, {
+            n: 'featureOfInterest',
+            rq: true,
+            ti: 'GML_3_1_1.FeaturePropertyType'
+          }, {
+            n: 'parameter',
+            mno: 0,
             col: true,
-            ti: '.ObservationPropertyType'
+            ti: 'SWE_1_0_1.AnyDataPropertyType'
+          }, {
+            n: 'result',
+            rq: true,
+            ti: 'AnyType'
           }]
       }, {
         ln: 'ObservationPropertyType',
@@ -182,15 +182,15 @@ var OM_1_0_0_Module_Factory = function () {
           }]
       }],
     eis: [{
-        en: 'ObservationCollection',
-        ti: '.ObservationCollectionType',
+        en: 'Observation',
+        ti: '.ObservationType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'
         }
       }, {
-        en: 'Observation',
-        ti: '.ObservationType',
+        en: 'ObservationCollection',
+        ti: '.ObservationCollectionType',
         sh: {
           lp: '_Feature',
           ns: 'http:\/\/www.opengis.net\/gml'

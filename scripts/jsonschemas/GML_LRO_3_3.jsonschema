@@ -2,6 +2,188 @@
 {
     "id":"http://www.opengis.net/gml/3.3/lro#",
     "definitions":{
+        "LRMWithOffsetType":{
+            "required":[
+                "offsetUnits"
+            ],
+            "allOf":[
+                {
+                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearReferencingMethodType"
+                },
+                {
+                    "type":"object",
+                    "title":"LRMWithOffsetType",
+                    "properties":{
+                        "offsetUnits":{
+                            "title":"offsetUnits",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"offsetUnits",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+                            }
+                        },
+                        "positiveLateralOffsetDirection":{
+                            "title":"positiveLateralOffsetDirection",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LateralOffsetDirectionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"positiveLateralOffsetDirection",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+                            }
+                        },
+                        "positiveVerticalOffsetDirection":{
+                            "title":"positiveVerticalOffsetDirection",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/VerticalOffsetDirectionType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"positiveVerticalOffsetDirection",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LRMWithOffsetType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+            },
+            "propertiesOrder":[
+                "offsetUnits",
+                "positiveLateralOffsetDirection",
+                "positiveVerticalOffsetDirection"
+            ]
+        },
+        "VerticalOffsetExpressionType":{
+            "type":"object",
+            "title":"VerticalOffsetExpressionType",
+            "properties":{
+                "value":{
+                    "title":"value",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
+                        }
+                    ],
+                    "propertyType":"value"
+                },
+                "uom":{
+                    "title":"uom",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"uom",
+                        "namespaceURI":""
+                    }
+                },
+                "verticalOffsetReferent":{
+                    "title":"verticalOffsetReferent",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"verticalOffsetReferent",
+                        "namespaceURI":""
+                    }
+                },
+                "featureGeometry":{
+                    "title":"featureGeometry",
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
+                        }
+                    ],
+                    "propertyType":"attribute",
+                    "attributeName":{
+                        "localPart":"featureGeometry",
+                        "namespaceURI":""
+                    }
+                }
+            },
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"VerticalOffsetExpressionType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+            },
+            "propertiesOrder":[
+                "value",
+                "uom",
+                "verticalOffsetReferent",
+                "featureGeometry"
+            ]
+        },
+        "LateralOffsetLinearSRSType":{
+            "required":[
+                "linearElement",
+                "lrm"
+            ],
+            "allOf":[
+                {
+                    "$ref":"#/definitions/IdentifiedObjectType"
+                },
+                {
+                    "type":"object",
+                    "title":"LateralOffsetLinearSRSType",
+                    "properties":{
+                        "linearElement":{
+                            "title":"linearElement",
+                            "allOf":[
+                                {
+                                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearElementPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"linearElement",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+                            }
+                        },
+                        "lrm":{
+                            "title":"lrm",
+                            "allOf":[
+                                {
+                                    "$ref":"#/definitions/LRMWithOffsetPropertyType"
+                                }
+                            ],
+                            "propertyType":"element",
+                            "elementName":{
+                                "localPart":"lrm",
+                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+                            }
+                        }
+                    }
+                }
+            ],
+            "typeType":"classInfo",
+            "typeName":{
+                "localPart":"LateralOffsetLinearSRSType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+            },
+            "propertiesOrder":[
+                "linearElement",
+                "lrm"
+            ]
+        },
         "LRMWithOffsetPropertyType":{
             "type":"object",
             "title":"LRMWithOffsetPropertyType",
@@ -159,171 +341,6 @@
                 "title",
                 "show",
                 "actuate"
-            ]
-        },
-        "LateralOffsetExpressionType":{
-            "type":"object",
-            "title":"LateralOffsetExpressionType",
-            "properties":{
-                "value":{
-                    "title":"value",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/double"
-                        }
-                    ],
-                    "propertyType":"value"
-                },
-                "uom":{
-                    "title":"uom",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"uom",
-                        "namespaceURI":""
-                    }
-                },
-                "lateralOffsetReferent":{
-                    "title":"lateralOffsetReferent",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"lateralOffsetReferent",
-                        "namespaceURI":""
-                    }
-                },
-                "featureGeometry":{
-                    "title":"featureGeometry",
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/anyURI"
-                        }
-                    ],
-                    "propertyType":"attribute",
-                    "attributeName":{
-                        "localPart":"featureGeometry",
-                        "namespaceURI":""
-                    }
-                }
-            },
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LateralOffsetExpressionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-            },
-            "propertiesOrder":[
-                "value",
-                "uom",
-                "lateralOffsetReferent",
-                "featureGeometry"
-            ]
-        },
-        "LateralOffsetDistanceExpressionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/DistanceExpressionType"
-                },
-                {
-                    "type":"object",
-                    "title":"LateralOffsetDistanceExpressionType",
-                    "properties":{
-                        "lateralOffsetExpression":{
-                            "title":"lateralOffsetExpression",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LateralOffsetExpressionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lateralOffsetExpression",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-                            }
-                        },
-                        "verticalOffsetExpression":{
-                            "title":"verticalOffsetExpression",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/VerticalOffsetExpressionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"verticalOffsetExpression",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LateralOffsetDistanceExpressionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-            },
-            "propertiesOrder":[
-                "lateralOffsetExpression",
-                "verticalOffsetExpression"
-            ]
-        },
-        "LateralOffsetLinearSRSType":{
-            "required":[
-                "linearElement",
-                "lrm"
-            ],
-            "allOf":[
-                {
-                    "$ref":"#/definitions/IdentifiedObjectType"
-                },
-                {
-                    "type":"object",
-                    "title":"LateralOffsetLinearSRSType",
-                    "properties":{
-                        "linearElement":{
-                            "title":"linearElement",
-                            "allOf":[
-                                {
-                                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearElementPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"linearElement",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-                            }
-                        },
-                        "lrm":{
-                            "title":"lrm",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/LRMWithOffsetPropertyType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"lrm",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-                            }
-                        }
-                    }
-                }
-            ],
-            "typeType":"classInfo",
-            "typeName":{
-                "localPart":"LateralOffsetLinearSRSType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-            },
-            "propertiesOrder":[
-                "linearElement",
-                "lrm"
             ]
         },
         "LateralOffsetLinearSRSPropertyType":{
@@ -485,54 +502,38 @@
                 "actuate"
             ]
         },
-        "LRMWithOffsetType":{
-            "required":[
-                "offsetUnits"
-            ],
+        "LateralOffsetDistanceExpressionType":{
             "allOf":[
                 {
-                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/LinearReferencingMethodType"
+                    "$ref":"http://www.opengis.net/gml/3.3/lr#/definitions/DistanceExpressionType"
                 },
                 {
                     "type":"object",
-                    "title":"LRMWithOffsetType",
+                    "title":"LateralOffsetDistanceExpressionType",
                     "properties":{
-                        "offsetUnits":{
-                            "title":"offsetUnits",
+                        "lateralOffsetExpression":{
+                            "title":"lateralOffsetExpression",
                             "allOf":[
                                 {
-                                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                                    "$ref":"#/definitions/LateralOffsetExpressionType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"offsetUnits",
+                                "localPart":"lateralOffsetExpression",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
                             }
                         },
-                        "positiveLateralOffsetDirection":{
-                            "title":"positiveLateralOffsetDirection",
+                        "verticalOffsetExpression":{
+                            "title":"verticalOffsetExpression",
                             "allOf":[
                                 {
-                                    "$ref":"#/definitions/LateralOffsetDirectionType"
+                                    "$ref":"#/definitions/VerticalOffsetExpressionType"
                                 }
                             ],
                             "propertyType":"element",
                             "elementName":{
-                                "localPart":"positiveLateralOffsetDirection",
-                                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-                            }
-                        },
-                        "positiveVerticalOffsetDirection":{
-                            "title":"positiveVerticalOffsetDirection",
-                            "allOf":[
-                                {
-                                    "$ref":"#/definitions/VerticalOffsetDirectionType"
-                                }
-                            ],
-                            "propertyType":"element",
-                            "elementName":{
-                                "localPart":"positiveVerticalOffsetDirection",
+                                "localPart":"verticalOffsetExpression",
                                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
                             }
                         }
@@ -541,18 +542,17 @@
             ],
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"LRMWithOffsetType",
+                "localPart":"LateralOffsetDistanceExpressionType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
             },
             "propertiesOrder":[
-                "offsetUnits",
-                "positiveLateralOffsetDirection",
-                "positiveVerticalOffsetDirection"
+                "lateralOffsetExpression",
+                "verticalOffsetExpression"
             ]
         },
-        "VerticalOffsetExpressionType":{
+        "LateralOffsetExpressionType":{
             "type":"object",
-            "title":"VerticalOffsetExpressionType",
+            "title":"LateralOffsetExpressionType",
             "properties":{
                 "value":{
                     "title":"value",
@@ -576,8 +576,8 @@
                         "namespaceURI":""
                     }
                 },
-                "verticalOffsetReferent":{
-                    "title":"verticalOffsetReferent",
+                "lateralOffsetReferent":{
+                    "title":"lateralOffsetReferent",
                     "allOf":[
                         {
                             "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
@@ -585,7 +585,7 @@
                     ],
                     "propertyType":"attribute",
                     "attributeName":{
-                        "localPart":"verticalOffsetReferent",
+                        "localPart":"lateralOffsetReferent",
                         "namespaceURI":""
                     }
                 },
@@ -605,27 +605,15 @@
             },
             "typeType":"classInfo",
             "typeName":{
-                "localPart":"VerticalOffsetExpressionType",
+                "localPart":"LateralOffsetExpressionType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
             },
             "propertiesOrder":[
                 "value",
                 "uom",
-                "verticalOffsetReferent",
+                "lateralOffsetReferent",
                 "featureGeometry"
             ]
-        },
-        "LateralOffsetDirectionType":{
-            "allOf":[
-                {
-                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
-                }
-            ],
-            "typeType":"enumInfo",
-            "typeName":{
-                "localPart":"LateralOffsetDirectionType",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-            }
         },
         "VerticalOffsetDirectionType":{
             "allOf":[
@@ -638,9 +626,55 @@
                 "localPart":"VerticalOffsetDirectionType",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
             }
+        },
+        "LateralOffsetDirectionType":{
+            "allOf":[
+                {
+                    "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/string"
+                }
+            ],
+            "typeType":"enumInfo",
+            "typeName":{
+                "localPart":"LateralOffsetDirectionType",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+            }
         }
     },
     "anyOf":[
+        {
+            "type":"object",
+            "properties":{
+                "name":{
+                    "allOf":[
+                        {
+                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
+                        },
+                        {
+                            "type":"object",
+                            "properties":{
+                                "localPart":{
+                                    "enum":[
+                                        "LRMWithOffset"
+                                    ]
+                                },
+                                "namespaceURI":{
+                                    "enum":[
+                                        "http://www.opengis.net/gml/3.3/lro"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "value":{
+                    "$ref":"#/definitions/LRMWithOffsetType"
+                }
+            },
+            "elementName":{
+                "localPart":"LRMWithOffset",
+                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
+            }
+        },
         {
             "type":"object",
             "properties":{
@@ -706,40 +740,6 @@
             },
             "elementName":{
                 "localPart":"LateralOffsetDistanceExpression",
-                "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
-            }
-        },
-        {
-            "type":"object",
-            "properties":{
-                "name":{
-                    "allOf":[
-                        {
-                            "$ref":"http://www.jsonix.org/jsonschemas/w3c/2001/XMLSchema.jsonschema#/definitions/QName"
-                        },
-                        {
-                            "type":"object",
-                            "properties":{
-                                "localPart":{
-                                    "enum":[
-                                        "LRMWithOffset"
-                                    ]
-                                },
-                                "namespaceURI":{
-                                    "enum":[
-                                        "http://www.opengis.net/gml/3.3/lro"
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "value":{
-                    "$ref":"#/definitions/LRMWithOffsetType"
-                }
-            },
-            "elementName":{
-                "localPart":"LRMWithOffset",
                 "namespaceURI":"http://www.opengis.net/gml/3.3/lro"
             }
         }

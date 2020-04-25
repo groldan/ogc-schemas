@@ -15,11 +15,9 @@ var GML_XBT_3_3_Module_Factory = function () {
             t: 'a'
           }]
       }, {
-        ln: 'LanguageStringType',
+        ln: 'LanguageStringAuxType',
+        bti: 'GML_3_2.StringOrRefType',
         ps: [{
-            n: 'value',
-            t: 'v'
-          }, {
             n: 'lang',
             t: 'a'
           }]
@@ -27,9 +25,11 @@ var GML_XBT_3_3_Module_Factory = function () {
         ln: 'CodeWithAuthorityType',
         bti: '.CodeType'
       }, {
-        ln: 'LanguageStringAuxType',
-        bti: 'GML_3_2.StringOrRefType',
+        ln: 'LanguageStringType',
         ps: [{
+            n: 'value',
+            t: 'v'
+          }, {
             n: 'lang',
             t: 'a'
           }]

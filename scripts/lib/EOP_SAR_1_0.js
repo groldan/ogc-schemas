@@ -2,7 +2,7 @@ var EOP_SAR_1_0_Module_Factory = function () {
   var EOP_SAR_1_0 = {
     n: 'EOP_SAR_1_0',
     dens: 'http:\/\/earth.esa.int\/sar',
-    deps: ['EOP_1_0', 'GML_3_1_1'],
+    deps: ['GML_3_1_1', 'EOP_1_0'],
     tis: [{
         ln: 'AcquisitionType',
         bti: 'EOP_1_0.AcquisitionType',
@@ -30,32 +30,23 @@ var EOP_SAR_1_0_Module_Factory = function () {
         bti: 'EOP_1_0.EarthObservationType'
       }, {
         t: 'enum',
-        ln: 'PolarisationModePropertyType',
-        vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
-      }, {
-        t: 'enum',
         ln: 'PolarisationChannelsPropertyType',
         vs: ['HH', 'HV', 'VH', 'VV', 'HH, VV', 'HH, VH', 'HH, HV', 'VH, VV', 'VH, HV', 'VV, HV', 'HH, VV, HV, VH', 'UNDEFINED']
+      }, {
+        t: 'enum',
+        ln: 'PolarisationModePropertyType',
+        vs: ['D', 'Q', 'S', 'T', 'UNDEFINED']
       }],
     eis: [{
         en: 'antennaLookDirection'
       }, {
-        en: 'polarisationMode'
-      }, {
         en: 'minimumIncidenceAngle',
         ti: 'GML_3_1_1.AngleType'
       }, {
-        en: 'incidenceAngleVariation',
+        en: 'maximumIncidenceAngle',
         ti: 'GML_3_1_1.AngleType'
       }, {
         en: 'polarisationChannels'
-      }, {
-        en: 'Acquisition',
-        ti: '.AcquisitionType',
-        sh: {
-          lp: 'Acquisition',
-          ns: 'http:\/\/earth.esa.int\/eop'
-        }
       }, {
         en: 'EarthObservation',
         ti: '.EarthObservationType',
@@ -64,11 +55,20 @@ var EOP_SAR_1_0_Module_Factory = function () {
           ns: 'http:\/\/earth.esa.int\/eop'
         }
       }, {
-        en: 'maximumIncidenceAngle',
+        en: 'incidenceAngleVariation',
         ti: 'GML_3_1_1.AngleType'
       }, {
         en: 'dopplerFrequency',
         ti: 'GML_3_1_1.MeasureType'
+      }, {
+        en: 'polarisationMode'
+      }, {
+        en: 'Acquisition',
+        ti: '.AcquisitionType',
+        sh: {
+          lp: 'Acquisition',
+          ns: 'http:\/\/earth.esa.int\/eop'
+        }
       }]
   };
   return {
